@@ -16,7 +16,7 @@ export default async function batchUpdate(agent, interval) {
 
     if (unlabelledPosts.length === 0) continue
 
-    const chunkSize = 25
+    const chunkSize = 50
 
     const postEntries: { uri: string; labels: string[] }[] = []
 

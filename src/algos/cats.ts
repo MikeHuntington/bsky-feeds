@@ -15,9 +15,6 @@ export const handler = async (ctx: AppContext, params: QueryParams) => {
     tag: shortname,
     limit: params.limit,
     cursor: params.cursor,
-    mediaOnly: false,
-    nsfwOnly: false,
-    excludeNSFW: true,
   })
 
   let feed = builder.map((row) => ({
