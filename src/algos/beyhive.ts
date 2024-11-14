@@ -15,7 +15,6 @@ export const handler = async (ctx: AppContext, params: QueryParams) => {
     tag: shortname,
     limit: params.limit,
     cursor: params.cursor,
-    mediaOnly: false,
     nsfwOnly: false,
     excludeNSFW: true,
   })
@@ -39,7 +38,7 @@ export const handler = async (ctx: AppContext, params: QueryParams) => {
 export class manager extends AlgoManager {
   public name: string = shortname
   public re =
-    /^(?!.*((\b(cat( |-)girl|cat( |-)ears|cat( |-)suit|fursona|nsfw|cat-like|furryart|doja|dojacat|anthro|anthropomorphic)\b)|#furry|#furryart|fursuit)).*\b(cat|cats|catsofbluesky|kitty|kitten|kitties)\b.*$/ims
+    /^(?!.*((\b(nsfw)\b)|#beyboons|#haghive|haghive|hasbeyn)).*\b(beyonce|beyhive|beyoncé|yonce|yoncé|#beyonce)\b.*$/ims
 
   public async periodicTask() {
     await this.db.removeTagFromOldPosts(
@@ -49,14 +48,6 @@ export class manager extends AlgoManager {
   }
 
   public async filter_post(post: Post): Promise<Boolean> {
-    if (
-      [
-        'did:plc:mcb6n67plnrlx4lg35natk2b',
-        'did:plc:2rhj4c7tzussdmfcrtlerr7b',
-        'did:plc:hw7t2navoastix67wjzrmvof',
-      ].includes(post.author)
-    )
-      return false
     if (post.replyRoot !== null) return false
     if (this.agent === null) {
       await this.start()
