@@ -30,7 +30,7 @@ const run = async () => {
 
   // (Optional) The path to an image to be used as your feed's avatar
   // Ex: ~/path/to/avatar.jpeg
-  const avatar: string = 'images/australia.png'
+  const avatar: string = 'images/nd.png'
 
   // -------------------------------------
   // NO NEED TO TOUCH ANYTHING BELOW HERE
