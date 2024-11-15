@@ -10,6 +10,7 @@
   "scripts": {
     "publishKeyboards": "tsx scripts/publishKeyboards.ts",
     "publishCats": "tsx scripts/publishCats.ts",
+    "publishBeyhive": "tsx scripts/publishBeyhive.ts",
     "publishScience": "tsx scripts/publishFeedGen.ts",
     "publishAuspol": "tsx scripts/publishAuspol.ts",
     "publishDads": "tsx scripts/publishDads.ts",
