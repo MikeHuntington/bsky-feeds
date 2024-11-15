@@ -84,8 +84,8 @@ export abstract class FirehoseSubscriptionBase {
             }
           }
         }
-        // update stored cursor every 1000 events or so
-        if (handledEvents > 1000 && Number.isInteger(commit.seq)) {
+        // update stored cursor every 20 events or so
+        if (handledEvents > 100 && Number.isInteger(commit.seq)) {
           this.updateCursor(commit.seq).then(() => {
             handledEvents = 0
           })
@@ -106,7 +106,8 @@ export abstract class FirehoseSubscriptionBase {
 
   async getCursor(): Promise<{ cursor?: number }> {
     const res = await this.db.getSubStateCursor(this.service)
-    return res ? { cursor: res.cursor } : {}
+    console.log('Cursor: ', res?.cursor)
+    return res ? { cursor: 50000000000 } : {}
   }
 }
 

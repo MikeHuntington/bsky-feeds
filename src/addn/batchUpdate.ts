@@ -10,13 +10,13 @@ export default async function batchUpdate(agent, interval) {
     console.log('core: Updating Labels: ', new Date().toISOString())
 
     const unlabelledPosts = await dbClient.getUnlabelledPostsWithMedia(
-      600,
+      300,
       interval,
     )
 
     if (unlabelledPosts.length === 0) continue
 
-    const chunkSize = 50
+    const chunkSize = 25
 
     const postEntries: { uri: string; labels: string[] }[] = []
 
