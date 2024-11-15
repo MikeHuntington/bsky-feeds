@@ -107,7 +107,7 @@ export abstract class FirehoseSubscriptionBase {
   async getCursor(): Promise<{ cursor?: number }> {
     const res = await this.db.getSubStateCursor(this.service)
     console.log('Cursor: ', res?.cursor)
-    return res ? { cursor: 50000000000 } : {}
+    return res ? { cursor: res.cursor } : {}
   }
 }
 
