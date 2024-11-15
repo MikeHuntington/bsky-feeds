@@ -272,7 +272,7 @@ class dbSingleton {
     else return results
   }
 
-  async getUnlabelledPostsWithMedia(limit = 100, lagTime = 60 * 1000) {
+  async getUnlabelledPostsWithMedia(limit = 100, lagTime = 5 * 60 * 1000) {
     const results = this.client
       ?.db()
       .collection('post')
