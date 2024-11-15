@@ -21,11 +21,11 @@ const run = async () => {
 
   // A display name for your feed
   // Ex: What's Hot
-  const displayName = '#BeyHive Social'
+  const displayName = '#WorkInProgress'
 
   // (Optional) A description of your feed
   // Ex: Top trending content from the whole network
-  const description = 'BeyHive!'
+  const description = 'Feed still under construction!'
 
   // (Optional) The path to an image to be used as your feed's avatar
   // Ex: ~/path/to/avatar.jpeg

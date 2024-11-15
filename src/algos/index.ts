@@ -9,10 +9,6 @@ import * as beyhive from './beyhive'
 type AlgoHandler = (ctx: AppContext, params: QueryParams) => Promise<AlgoOutput>
 
 const algos = {
-  [cats.shortname]: {
-    handler: <AlgoHandler>cats.handler,
-    manager: cats.manager,
-  },
   [beyhive.shortname]: {
     handler: <AlgoHandler>beyhive.handler,
     manager: beyhive.manager,

@@ -121,10 +121,10 @@ export class FirehoseSubscription extends FirehoseSubscriptionBase {
 
     if (postsToCreate.length > 0) {
       postsToCreate.forEach(async (to_insert) => {
-        if (to_insert)
-          dbOperations.push(
-            this.db.replaceOneURI('post', to_insert.uri, to_insert),
-          )
+        if (to_insert) console.log(to_insert)
+        dbOperations.push(
+          this.db.replaceOneURI('post', to_insert.uri, to_insert),
+        )
       })
     }
     await Promise.all(dbOperations)
