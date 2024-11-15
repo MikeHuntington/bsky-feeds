@@ -7,6 +7,10 @@ import dbClient from '../db/dbClient'
 
 dotenv.config()
 
+function removeAccents(str: string): string {
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+}
+
 // max 15 chars
 export const shortname = 'beyhive'
 
@@ -82,7 +86,9 @@ export class manager extends AlgoManager {
 
     matchString = `${post.text} ${matchString}`.replace('\n', ' ')
 
-    if (matchString.match(this.re) !== null) {
+    const normalizedString = removeAccents(matchString)
+
+    if (normalizedString.match(this.re) !== null) {
       console.log(post)
       match = true
     }
